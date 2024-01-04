@@ -8,6 +8,7 @@ window.onload = function () {
 
     highPriorityCount =
       parseInt(localStorage.getItem("highPriorityCount")) || 0;
+
     updateTaskCount();
   }
 };
@@ -51,6 +52,7 @@ function addTask() {
 
   tasks.push(task);
   localStorage.setItem("tasks", JSON.stringify(tasks));
+  localStorage.setItem("highPriorityCount", highPriorityCount);
 
   displayTasks();
 }
@@ -84,13 +86,13 @@ function displayTasks() {
         <div>Status: ${task.status}</div> 
       </div><br>
 
-      <div>
+      <div class="task-name-container">
         <input type="checkbox" id="chk${index}" onchange="toggleDone(${index})" ${
         task.status === "done" ? "checked" : ""
       }>
-    <label for="chk${index}" class="task-name ${
+    <p for="chk${index}" class="task-name ${
         task.status === "done" ? "done" : ""
-      }">${task.name}</label>
+      }">${task.name}</p>
       </div>
     </div>
 

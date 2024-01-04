@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 19px;
 
 }
@@ -166,4 +166,14 @@ button:hover {
 .task-count-container h2 {
     font-size: 19px;
     font-weight: 700;
+}
+
+.task-name-container {
+    display: flex;
+}
+
+.task-name-container input {
+    margin-right: 20px;
+    width: 20px;
+
 }
